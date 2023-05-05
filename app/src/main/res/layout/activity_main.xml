@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/royal_background_chat_color"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#250170"
+        >
+        <ImageView
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/chatbot"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aco"
+            android:layout_marginLeft="20dp"
+              android:layout_marginTop="10dp"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            style="@style/CardView.Dark"
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:src="@drawable/baseline_mic_none_24"
+            app:fabCustomSize="35dp"
+            android:id="@+id/user_input_mic"
+            app:maxImageSize="40dp"
+            android:contentDescription="user_voice"
+            android:layout_marginTop="5dp"
+            />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/idRVChats"
+        android:layout_above="@id/idRLMsg"
+        android:layout_below="@id/ll"/>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/idRLMsg"
+        android:orientation="horizontal"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="#e0d1ff"
+            android:layout_margin="3dp"
+            android:layout_toLeftOf="@id/idFABsend"
+
+            >
+
+            <EditText
+                android:id="@+id/idEdtMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@id/idFABsend"
+                android:hint="type message..."
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:background="@null"
+                android:textSize="25sp"/>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/baseline_send_24"
+            android:id="@+id/idFABsend"
+            android:contentDescription="send"
+            android:layout_margin="4dp"
+            app:fabCustomSize="45dp"
+            android:backgroundTint="#250170"
+            android:layout_gravity="center_horizontal"
+            app:tint="@color/white"
+            android:layout_alignParentRight="true"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
