@@ -84,7 +84,7 @@ private  ChatRVAdapter chatRVAdapter;
     private void getResponse(String message) {
     chatsModelArrayList.add(new ChatsModel(message,USER_KEY));
     chatRVAdapter.notifyDataSetChanged();
-    String url ="http://api.brainshop.ai/get?bid=174895&key=O0xW3SOiFaHYyNz6&uid=[uid]&msg="+message;
+    String url ="http://api.brainshop.ai/msg="+message;
     String BASE_URL = "http://api.brainshop.ai/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
